@@ -28,4 +28,11 @@ public class UserService {
 
         return modelMapper.map(savedEntity, UserResponse.class);
     }
+
+    public UserResponse getUserProfile(String userId) {
+
+        User userEntity = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
+
+        return modelMapper.map(userEntity, UserResponse.class);
+    }
 }
