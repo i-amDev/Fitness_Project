@@ -5,11 +5,13 @@ import com.fitnessProject.user_service.dto.UserResponse;
 import com.fitnessProject.user_service.entity.User;
 import com.fitnessProject.user_service.repository.UserRepository;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
+@Slf4j
 public class UserService {
 
     private final UserRepository userRepository;
@@ -34,5 +36,10 @@ public class UserService {
         User userEntity = userRepository.findById(userId).orElseThrow(() -> new RuntimeException("User not found"));
 
         return modelMapper.map(userEntity, UserResponse.class);
+    }
+
+    public Boolean existsByUserId(String userId) {
+        log.info("Calling user service for {}", userId);
+        return userRepository.existsById(userId);
     }
 }

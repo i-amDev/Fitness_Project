@@ -16,11 +16,19 @@ public class ActivityService {
 
     private final ModelMapper modelMapper;
 
+    private final UserValidationService userValidationService;
+
     public ActivityResponse trackActivity(ActivityRequest activityRequest) {
 
 //        Activity entity = modelMapper.map(activityRequest, Activity.class);
 //         Not using the model mapper to map activityRequest to activity class because the createdAt
 //         field was not working properly because it was already defaulted with the value null.
+
+        boolean isValidUser = userValidationService.validateUser(activityRequest.getUserId());
+
+        if (!isValidUser) {
+            throw new RuntimeException("Invalid user with userId " + activityRequest.getUserId());
+        }
 
         Activity entity = Activity.builder()
                 .userId(activityRequest.getUserId())
