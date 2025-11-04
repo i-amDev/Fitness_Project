@@ -15,6 +15,8 @@ public class UserResponse {
 
     private String id;
 
+    private String keyCloakId;
+
     private String email;
 
     private String password;
