@@ -21,6 +21,4 @@ public class ActivityController {
     public ResponseEntity<ActivityResponse> trackActivity (@RequestBody ActivityRequest activityRequest) {
         return ResponseEntity.ok(activityService.trackActivity(activityRequest));
     }
-
-
 }
