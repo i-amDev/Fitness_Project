@@ -18,5 +18,4 @@ public class WebClientConfig {
     public WebClient userServiceWebClient(WebClient.Builder webClientBuilder) {
         return webClientBuilder.baseUrl("http://USER-SERVICE").build();
     }
-
 }
