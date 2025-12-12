@@ -28,6 +28,4 @@ public class UserValidationService {
 
         return false;
     }
-
-
 }
