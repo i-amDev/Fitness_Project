@@ -57,5 +57,4 @@ public class ActivityService {
 
         return modelMapper.map(savedEntity, ActivityResponse.class);
     }
-
 }
