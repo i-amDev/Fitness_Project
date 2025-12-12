@@ -113,7 +113,6 @@ public class ActivityAIService {
                     .safety(safety)
                     .createdAt(LocalDateTime.now())
                     .build();
-
         }
         catch (Exception e) {
             e.printStackTrace();
