@@ -176,5 +176,4 @@ public class ActivityAIService {
                 .createdAt(LocalDateTime.now())
                 .build();
     }
-
 }
