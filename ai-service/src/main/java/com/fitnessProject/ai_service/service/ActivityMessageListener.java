@@ -23,6 +23,4 @@ public class ActivityMessageListener {
         Recommendation recommendation = activityAIService.generateRecommendation(activity);
         recommendationRepository.save(recommendation);
     }
-
-
 }
