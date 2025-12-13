@@ -39,5 +39,4 @@ public class GeminiService {
                 .bodyToMono(String.class)
                 .block();
     }
-
 }
