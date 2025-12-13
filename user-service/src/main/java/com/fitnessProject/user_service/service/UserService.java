@@ -75,5 +75,4 @@ public class UserService {
 //        return userRepository.existsById(userId);
         return userRepository.existsByKeyCloakId(userId);
     }
-
 }
