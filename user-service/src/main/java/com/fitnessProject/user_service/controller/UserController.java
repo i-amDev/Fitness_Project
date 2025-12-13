@@ -29,6 +29,4 @@ public class UserController {
     public ResponseEntity<Boolean> validateUser (@PathVariable String userId) {
         return ResponseEntity.ok(userService.existsByUserId(userId));
     }
-
-
 }
